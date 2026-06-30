@@ -1,11 +1,13 @@
 package model;
 import java.util.ArrayList;
-
+import java.util.Random;
 
 public class Baralho {
+
     ArrayList<Carta> cartas;
     
     public Baralho(){
+        
         cartas = new ArrayList<>();
         
         //Um baralho UNO tem 112 cartas
@@ -19,15 +21,15 @@ public class Baralho {
             }       
         
             for(int i=0 ; i<4 ; i++){
-                cartas.add(new CartaEspecial(cores[i], "Bloquear"));
-                cartas.add(new CartaEspecial(cores[i], "Mais2"));
-                cartas.add(new CartaEspecial(cores[i], "MudaSentido")); 
+                cartas.add(new CartaEspecial(cores[i],"Especial", "Bloquear"));
+                cartas.add(new CartaEspecial(cores[i],"Especial", "Mais2"));
+                cartas.add(new CartaEspecial(cores[i],"Especial", "MudaSentido")); 
             }
         
-            cartas.add(new CartaEspecial("Preto", "MudarCor"));
-            cartas.add(new CartaEspecial("Preto", "MudarCor"));
-            cartas.add(new CartaEspecial("Preto", "Mais4"));
-            cartas.add(new CartaEspecial("Preto", "Mais4"));
+            cartas.add(new CartaEspecial("Preto","Especial", "MudarCor"));
+            cartas.add(new CartaEspecial("Preto","Especial", "MudarCor"));
+            cartas.add(new CartaEspecial("Preto","Especial", "Mais4"));
+            cartas.add(new CartaEspecial("Preto","Especial", "Mais4"));
             //criou 56 cartas aí repete 1 vez
         }
     }
@@ -37,10 +39,20 @@ public class Baralho {
     }
     
     public Carta comprar(){
-        Carta cartaAleatoria;
-        
+
         //pega uma carta aleatoria no ArrayList
+        Random random = new Random();
+        int index = random.nextInt(cartas.size());
         
-        return cartaAleatoria;        
+        return cartas.get(index);      
     }
+
+    public ArrayList<Carta> getCartas() {
+        return cartas;
+    }
+
+    public void setCartas(ArrayList<Carta> cartas) {
+        this.cartas = cartas;
+    }
+
 }

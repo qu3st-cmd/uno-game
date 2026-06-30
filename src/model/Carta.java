@@ -11,4 +11,22 @@ public abstract class Carta {
     }
     
     public abstract String aplicarEfeito();
+
+    public String getCor() {
+        return cor;
+    }
+
+    public void setCor(String cor) {
+        this.cor = cor;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    
 }

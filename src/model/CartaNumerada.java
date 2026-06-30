@@ -11,7 +11,12 @@ public class CartaNumerada extends Carta{
     
     @Override
     public String aplicarEfeito(){
+
+        return null;
         
     }
     
+    public int getNumero() {
+        return numero;
+    }
 }
